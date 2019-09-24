@@ -1,6 +1,6 @@
 FROM php:7.1-fpm
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y --no-install-recommends apt-utils libpng-dev libjpeg-dev git curl wget libmagickwand-dev libmagickcore-dev libxslt1-dev\
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y --no-install-recommends apt-utils libpng-dev libjpeg-dev git curl wget unzip libmagickwand-dev libmagickcore-dev libxslt1-dev\
     && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
     && docker-php-ext-install gd mysqli pdo_mysql zip opcache bcmath intl soap xsl calendar exif gettext pcntl sockets\
     
